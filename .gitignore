@@ -1,0 +1,13 @@
+.release/
+*.zip
+.DS_Store
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# WoW SavedVariables (only present if symlinked into a live install)
+*.lua.bak
+WTF/

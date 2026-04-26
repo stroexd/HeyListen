@@ -1,0 +1,17 @@
+## Interface: 20505
+## Title: HeyListen
+## Notes: Mirrors ready checks and whispers from one account to another (multi-box helper).
+## Notes-deDE: Spiegelt Readychecks und Whisper von einem Account zum anderen (Multi-Box-Helfer).
+## Author: Stroe-Spineshatter
+## Version: 0.1.0
+## SavedVariables: HeyListenDB
+## X-Flavor: TBC
+## X-Category: Chat & Communication
+## X-License: MIT
+
+embeds.xml
+
+Pairing.lua
+Comm.lua
+Mirror.lua
+Core.lua

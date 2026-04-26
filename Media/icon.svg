@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <!-- Bronze ring (cylindrical highlight) -->
+    <linearGradient id="bronze" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#5e3f1a"/>
+      <stop offset="20%"  stop-color="#a37428"/>
+      <stop offset="42%"  stop-color="#f4d27a"/>
+      <stop offset="55%"  stop-color="#fff1b8"/>
+      <stop offset="68%"  stop-color="#d8a64a"/>
+      <stop offset="100%" stop-color="#3a2510"/>
+    </linearGradient>
+
+    <radialGradient id="rivet" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#fff1b8"/>
+      <stop offset="50%" stop-color="#a37428"/>
+      <stop offset="100%" stop-color="#1c1206"/>
+    </radialGradient>
+
+    <!-- Inner arcane disc -->
+    <radialGradient id="discBg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#26284a"/>
+      <stop offset="55%" stop-color="#10122a"/>
+      <stop offset="100%" stop-color="#04050d"/>
+    </radialGradient>
+
+    <radialGradient id="arcaneGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7fa8ff" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#3050a0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Silhouette: armored, with cool steel tone -->
+    <linearGradient id="silhouette" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#eaf3ff"/>
+      <stop offset="55%" stop-color="#9bb6cf"/>
+      <stop offset="100%" stop-color="#52708e"/>
+    </linearGradient>
+
+    <linearGradient id="pauldron" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#cfe2f4"/>
+      <stop offset="100%" stop-color="#3a546e"/>
+    </linearGradient>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="silshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+
+  <!-- Bronze outer ring -->
+  <circle cx="128" cy="128" r="124" fill="url(#bronze)"/>
+  <circle cx="128" cy="128" r="124" fill="none" stroke="#1c1206" stroke-width="2"/>
+  <circle cx="128" cy="128" r="110" fill="none" stroke="#1c1206" stroke-width="2"/>
+  <circle cx="128" cy="128" r="110" fill="none" stroke="#fff1b8" stroke-width="0.8" opacity="0.45"/>
+
+  <!-- Compass rivets -->
+  <circle cx="128" cy="14"  r="6" fill="url(#rivet)" stroke="#1c1206" stroke-width="1"/>
+  <circle cx="242" cy="128" r="6" fill="url(#rivet)" stroke="#1c1206" stroke-width="1"/>
+  <circle cx="128" cy="242" r="6" fill="url(#rivet)" stroke="#1c1206" stroke-width="1"/>
+  <circle cx="14"  cy="128" r="6" fill="url(#rivet)" stroke="#1c1206" stroke-width="1"/>
+
+  <!-- Inner arcane disc -->
+  <circle cx="128" cy="128" r="108" fill="url(#discBg)"/>
+  <circle cx="128" cy="128" r="108" fill="url(#arcaneGlow)"/>
+
+  <!-- Clip everything below inside the inner disc -->
+  <clipPath id="discClip">
+    <circle cx="128" cy="128" r="108"/>
+  </clipPath>
+
+  <g clip-path="url(#discClip)">
+    <!-- LEFT silhouette (armored) -->
+    <g>
+      <g transform="translate(2,3)" opacity="0.45" filter="url(#silshadow)">
+        <circle cx="62" cy="102" r="24" fill="#000"/>
+        <path d="M 14 220 C 14 158 26 138 62 138 C 98 138 110 158 110 220 Z" fill="#000"/>
+      </g>
+      <!-- helmet peak -->
+      <path d="M 50 86 L 62 70 L 74 86 Z" fill="url(#pauldron)" opacity="0.95"/>
+      <!-- head -->
+      <circle cx="62" cy="102" r="24" fill="url(#silhouette)"/>
+      <!-- body bust -->
+      <path d="M 14 220 C 14 158 26 138 62 138 C 98 138 110 158 110 220 Z" fill="url(#silhouette)"/>
+      <!-- pauldron caps -->
+      <path d="M 14 158 C 14 142 24 134 36 138 L 38 156 Q 22 158 18 168 Z" fill="url(#pauldron)"/>
+      <path d="M 110 158 C 110 142 100 134 88 138 L 86 156 Q 102 158 106 168 Z" fill="url(#pauldron)"/>
+    </g>
+
+    <!-- RIGHT silhouette (mirror) -->
+    <g>
+      <g transform="translate(2,3)" opacity="0.45" filter="url(#silshadow)">
+        <circle cx="194" cy="102" r="24" fill="#000"/>
+        <path d="M 146 220 C 146 158 158 138 194 138 C 230 138 242 158 242 220 Z" fill="#000"/>
+      </g>
+      <path d="M 182 86 L 194 70 L 206 86 Z" fill="url(#pauldron)" opacity="0.95"/>
+      <circle cx="194" cy="102" r="24" fill="url(#silhouette)"/>
+      <path d="M 146 220 C 146 158 158 138 194 138 C 230 138 242 158 242 220 Z" fill="url(#silhouette)"/>
+      <path d="M 146 158 C 146 142 156 134 168 138 L 170 156 Q 154 158 150 168 Z" fill="url(#pauldron)"/>
+      <path d="M 242 158 C 242 142 232 134 220 138 L 218 156 Q 234 158 238 168 Z" fill="url(#pauldron)"/>
+    </g>
+
+    <!-- Arcane bidirectional arrows -->
+    <g fill="#9fd6ff" stroke="#9fd6ff" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)">
+      <!-- top arrow: pointing right -->
+      <g>
+        <rect x="100" y="104" width="56" height="9" rx="3"/>
+        <polygon points="148,94 172,108.5 148,123"/>
+      </g>
+      <!-- bottom arrow: pointing left -->
+      <g>
+        <rect x="100" y="143" width="56" height="9" rx="3"/>
+        <polygon points="108,138 84,147.5 108,157"/>
+      </g>
+    </g>
+  </g>
+</svg>
