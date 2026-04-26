@@ -9,6 +9,7 @@
 ## X-Category: Chat & Communication
 ## X-License: MIT
 ## X-Website: https://github.com/stroexd/HeyListen
+## X-Curse-Project-ID: 1525489
 
 embeds.xml
 
