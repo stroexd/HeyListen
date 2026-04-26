@@ -3,7 +3,7 @@
 ## Notes: Mirrors ready checks and whispers from one account to another (multi-box helper).
 ## Notes-deDE: Spiegelt Readychecks und Whisper von einem Account zum anderen (Multi-Box-Helfer).
 ## Author: Stroe-Spineshatter
-## Version: 0.1.0
+## Version: 0.1.1
 ## SavedVariables: HeyListenDB
 ## X-Flavor: TBC
 ## X-Category: Chat & Communication

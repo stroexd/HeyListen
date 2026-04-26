@@ -30,7 +30,7 @@ read_globals = {
   "C_Timer", "C_ChatInfo", "PlaySoundFile",
 
   -- Event/Frame
-  "GameTooltip", "GameFontNormal", "GameFontHuge", "GameFontHighlight",
+  "GameTooltip", "GameFontNormal", "GameFontNormalHuge", "GameFontHighlight", "GameFontNormalSmall",
 
   -- TBC-specific (partial)
   "GetContainerNumSlots", "GetContainerItemInfo", "GetContainerItemLink",

@@ -86,7 +86,7 @@ function Mirror:BuildFlashFrame()
   tex:SetAllPoints()
   tex:SetColorTexture(1, 0.1, 0.1, 0.45)
 
-  local text = f:CreateFontString(nil, "OVERLAY", "GameFontHuge")
+  local text = f:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge")
   text:SetPoint("CENTER", 0, 100)
   text:SetTextColor(1, 0.9, 0.2)
   text:SetText("")
@@ -105,8 +105,17 @@ function Mirror:BuildFlashFrame()
   flashAnim = ag
 end
 
+local function ensureFlash()
+  if flashFrame then return flashFrame end
+  local ok, err = pcall(function() Mirror:BuildFlashFrame() end)
+  if not ok then
+    addon:Print("flash lazy-build failed: " .. tostring(err))
+  end
+  return flashFrame
+end
+
 local function flash(message)
-  if not flashFrame then return end
+  if not ensureFlash() then return end
   flashText:SetText(message)
   flashFrame:SetAlpha(0)
   flashFrame:Show()
@@ -300,6 +309,7 @@ function Mirror:OnWhisper(originalSender, text, fromAccount)
 end
 
 function Mirror:OnTest(fromAccount)
+  flash(("TEST signal from %s\n(this is what a ready check looks like)"):format(stripRealm(fromAccount)))
   newToast(
     "TEST",
     "→ " .. selfShortName(),
