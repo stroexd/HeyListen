@@ -11,3 +11,9 @@
 # WoW SavedVariables (only present if symlinked into a live install)
 *.lua.bak
 WTF/
+
+# Builder for Icons
+/Media/build-icons.sh
+
+#Script for testing
+/dev-link.sh

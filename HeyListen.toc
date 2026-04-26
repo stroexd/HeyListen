@@ -8,6 +8,7 @@
 ## X-Flavor: TBC
 ## X-Category: Chat & Communication
 ## X-License: MIT
+## X-Website: https://github.com/stroexd/HeyListen
 
 embeds.xml
 
