@@ -15,5 +15,6 @@ ignore:
   - dev-link.sh
   - Media/icon.svg
   - Media/build-icons.sh
+  - tests
 
 enable-nolib-creation: no
